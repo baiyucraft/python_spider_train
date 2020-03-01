@@ -1,5 +1,4 @@
 import requests
-import re
 import bs4
 import html5lib
 # coding=utf-8
@@ -15,6 +14,7 @@ header = {
 url = "http://www.dingdiansk.com"
 novelpath = 'D:/project/1testpack/'
 novelId = input("请输入小说的序号：")
+
 
 #获取网页html内容
 def getHtml(url):
@@ -50,11 +50,9 @@ def downlaodChaper(chaperL):
             f.write(chaperText+'\n')
     f.close()
 
+chaperL = getChaper(url)
+downlaodChaper(chaperL)
 # for line in cont.readlins():
 #     if line=='\n':
 #         line = line.strip('\n')
-
-
-chaperL = getChaper(url)
-downlaodChaper(chaperL)
 
