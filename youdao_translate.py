@@ -1,4 +1,5 @@
 import requests
+# -*- coding: UTF-8 -*-
 #定义方法
 def youdao(t):
     #请求链接

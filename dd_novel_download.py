@@ -1,7 +1,7 @@
 import requests
 import bs4
 import html5lib
-# coding=utf-8
+# -*- coding: UTF-8 -*-
 header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
         'Cookie':'_cfduid=d013dbab27f08d937abf1668bba1c507b1582800657; age_certification=isok; _ga=GA1.2.981223937.1582800691; _gid=GA1.2.993052740.1582800691; wordpress_logged_in_6242fde54bf6f4f4b0c842643584bd9b=hjj19991111%7C1584010356%7CTLIjKCulafQoTZo4aLk8HxDkTBnKsWa7NZPp8CvSipv%7Ccb3e5132b4894dc7d31d2494bfbd0c62eb9d4dd547fc6ba7919a5cca85c8de63; PHPSESSID=tmufe0qi6auio9jead30s3o99n',
