@@ -1,0 +1,121 @@
+#app{
+    border-radius: 20px;
+}
+#main{
+    border-radius: 20px;
+    /* border: 1px solid #173D9C; */
+}
+/* 左侧 */
+#left{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #173D9C;
+}
+#left_admin{
+    border-top-left-radius: 20px;
+    /* border: 1px solid #333; */
+}
+#left_mid{
+    padding-top: 30px;
+}
+#left_mid QPushButton{
+    border: none;
+    color: #fff;
+}
+#left_mid #left_label{
+    font-size: 22px;
+    height: 30px;
+    padding-left: 10px;
+    text-align: left;
+}
+#left_mid #left_button{
+    font-size: 26px;
+    height: 60px;
+}
+#left_mid #left_button:hover{
+    color: #4777F0;
+}
+#left_mid #left_button_t{
+    font-size: 26px;
+    height: 60px;
+    background-color: #4777F0;
+    border-left: 8px solid #fff;
+}
+#left_mid #left_more{
+    font-size: 26px;
+    height: 60px;
+}
+#left_bottom{
+    border-bottom-left-radius: 20px;
+    /* border: 1px solid #333; */
+}
+
+
+/* 上部状态栏 */
+#top{
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+}
+#top_left{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#top_right{  
+    border-top-right-radius: 20px;
+}
+#top_close{
+    background: #F76677;
+    border-radius: 5px;
+}
+#top_close:hover{
+    background: red;
+}
+#top_mini{
+    background: #6DDF6D;
+    border-radius: 5px;
+}
+#top_mini:hover{
+    background: green;
+}
+
+
+/* 中部主要 */
+#mid{
+    border-bottom-right-radius: 20px;
+    background-color: #fff;
+}
+#mid_main{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#mid_main_this{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#mid_row1, #mid_row2{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#mid_main_this #mid_t{
+    font-size: 22px;
+}
+#mid_main_this #mid_input{
+    border: 1px solid #ccc;
+}
+#mid_main_this #mid_but{
+    font-size: 22px;
+    border: none;
+    background-color: #4777F0;
+    color: #fff;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); */
+}
+#mid_main_this #mid_c{
+    border: 1px solid #ccc;
+}
+
+
+/* 底部栏 */
+#bottom{
+    border: 1px solid #333;
+}
