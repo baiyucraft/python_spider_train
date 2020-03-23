@@ -17,7 +17,6 @@ class Novel():
         self.url = "http://www.dingdiansk.com"
         self.novel_path = path
         self.novel_id = id
-        self.count = 5
     # 获取网页html内容
     def get_html(self, url):
         rs = requests.get(url, headers=self.header)

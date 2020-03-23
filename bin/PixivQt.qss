@@ -1,0 +1,27 @@
+/* 小说下载 */
+#PixivQt{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#row{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#t{
+    font-family: '微软雅黑';
+    font-size: 22px;
+}
+#input{
+    font-family: '微软雅黑';
+    border: 1px solid #ccc;
+}
+#button,#button1,#button2,#button3{
+    font-family: '微软雅黑';
+    font-size: 22px;
+    border: none;
+    background-color: #4777F0;
+    color: #fff;
+}
+#console{
+    border: 1px solid #ccc;
+}

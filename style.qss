@@ -21,6 +21,7 @@
 #left_mid QPushButton{
     border: none;
     color: #fff;
+    font-family: '微软雅黑';
 }
 #left_mid #left_label{
     font-size: 22px;
@@ -84,33 +85,60 @@
 #mid{
     border-bottom-right-radius: 20px;
     background-color: #fff;
+    /* border: 1px solid #333; */
 }
 #mid_main{
     border: none;
     /* border: 1px solid #333; */
 }
-#mid_main_this{
+/* 小说下载 */
+#mid_novel{
     border: none;
     /* border: 1px solid #333; */
 }
-#mid_row1, #mid_row2{
+#mid_novel #mid_row{
     border: none;
     /* border: 1px solid #333; */
 }
-#mid_main_this #mid_t{
+#mid_novel #mid_t{
     font-size: 22px;
 }
-#mid_main_this #mid_input{
+#mid_novel #mid_input{
     border: 1px solid #ccc;
 }
-#mid_main_this #mid_but{
+#mid_novel #mid_but{
     font-size: 22px;
     border: none;
     background-color: #4777F0;
     color: #fff;
     /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); */
 }
-#mid_main_this #mid_c{
+#mid_novel #mid_c{
+    border: 1px solid #ccc;
+}
+/* pixiv下载 */
+#mid_pixiv{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#mid_pixiv #mid_row{
+    border: none;
+    /* border: 1px solid #333; */
+}
+#mid_pixiv #mid_t{
+    font-size: 22px;
+}
+#mid_pixiv #mid_input{
+    border: 1px solid #ccc;
+}
+#mid_pixiv #mid_but{
+    font-size: 22px;
+    border: none;
+    background-color: #4777F0;
+    color: #fff;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); */
+}
+#mid_pixiv #mid_c{
     border: 1px solid #ccc;
 }
 
