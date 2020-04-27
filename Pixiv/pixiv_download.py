@@ -1,6 +1,5 @@
 from threading import Thread
 import requests
-import bs4
 import os
 import time
 from queue import Queue
@@ -11,9 +10,7 @@ class Pixiv:
     def __init__(self, p, path, b):
         self.header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-            'Cache-Control': 'max-age=0',
+            'Accept-Language': 'zh-CN,zh',
             'Connection': 'close'
         }
         self.pic_header = {
@@ -25,8 +22,6 @@ class Pixiv:
         self.week_url = 'https://www.pixiv.net/ranking.php?mode=weekly&content=illust'
         self.month_url = 'https://www.pixiv.net/ranking.php?mode=monthly&content=illust'
         self.url = ''
-        self.url_id = []
-        self.u_id = Queue()
         self.folder_path = path
         self.p = p 
         self.b = int(b) 
@@ -37,21 +32,25 @@ class Pixiv:
 
     # 获取排行榜图片ID
     def get_id(self):
-        self.header['referer'] = self.url
-        url_list = []
-        if self.p =='3':
-            for i in ['1','2','3']:
-                self.url = self.url + '&p=' + i + '&format=json'
-                rs = self.s.get(self.url, headers=self.header).json()
-                url_list += rs['contents']
+        # 每50个图片id进行分类
+        if self.b/50 == int(self.b/50):
+            tl = int(self.b/50)
         else:
-            self.url = self.url + '&p=1&format=json'
-            rs = self.s.get(self.url, headers=self.header).json()
+            tl = int(self.b/50) + 1
+        url_list = []
+        # 通过返回的json数据抓取所有图片的数据
+        for t in range(tl):
+            self.id_url = self.url + '&p=' + str(t+1) + '&format=json'
+            rs = self.s.get(self.id_url, headers=self.header).json()
             url_list += rs['contents']
+        # 对每一个id进行编号，采用二维数组
         num = 1
+        self.url_id = []
         for u in url_list:
             self.url_id.append([num, str(u['illust_id'])])
             num = num + 1
+        # 创建下载id队列
+        self.u_id = Queue()
         for id in self.url_id[:self.b]:
             self.u_id.put(id)
 
@@ -69,7 +68,7 @@ class Pixiv:
             img_url = []
             for imgp in imgBody:
                 img_url.append(imgp['urls']['original'])
-            if len(img_url) <= 10:
+            if len(img_url) <= 20:
                 self.download_img(img_url, id)
 
     # 下载图片
@@ -118,7 +117,6 @@ class Pixiv:
         T = []
         for i in range(10):
             t = Thread(target=self.get_durl, args=())
-            # time.sleep(5)
             T.append(t)
         for i in T:
             i.start()
